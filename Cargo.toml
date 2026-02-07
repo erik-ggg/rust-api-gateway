@@ -1,0 +1,25 @@
+[package]
+name = "rust-api-gateway"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum = { version = "0.8.2", features = ["macros"] }
+tokio = { version = "1.43.0", features = ["full"] }
+tower = { version = "0.5.2", features = ["buffer", "limit", "load-shed", "timeout", "util"] }
+tower-http = { version = "0.6.2", features = ["trace", "cors", "fs", "set-header"] }
+tower-sessions = { version = "0.14.0", features = ["memory-store"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter", "json", "std"] }
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.137"
+config = "0.15.6"
+reqwest = { version = "0.12.12", features = ["json", "stream"] }
+thiserror = "2.0.11"
+anyhow = "1.0.95"
+time = "0.3.37" # Required for tower-sessions expiry usually
+
+[dev-dependencies]
+http-body-util = "0.1.2"
+mime = "0.3.17"
+tokio = { version = "1.43.0", features = ["full", "test-util"] }

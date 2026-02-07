@@ -1,0 +1,6 @@
+[server]
+port = 8080
+log_level = "info"
+
+[proxy]
+target_url = "https://pre-api.example.com"

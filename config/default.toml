@@ -1,0 +1,18 @@
+[server]
+port = 3000
+log_level = "info"
+log_format = "text"
+
+[proxy]
+target_url = "https://httpbin.org"
+
+[security]
+https = false
+secure_cookies = false
+same_site = "Lax"
+enable_hsts = false
+enable_csp = false
+
+[reliability]
+rate_limit_per_sec = 100
+timeout_ms = 5000
